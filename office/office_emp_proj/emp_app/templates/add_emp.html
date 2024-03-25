@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add an Employ</title>
+    <style>
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.form-label {
+  font-weight: bold;
+}
+
+
+    .btn-primary {
+  display: block;
+  width: 30%;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #3389e4; /* Change background color */
+  border: none;
+  border-radius: 5px;
+  color: #f5f1f1; /* Change text color */
+  cursor: pointer;
+}
+</style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1> Add An Employ </h1>
+     
+      <hr>
+    </div>
+   
+
+    <form action="/add_emp" method="post">
+      {% csrf_token %}
+     
+      <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" name= "first_name" value="{{ first_name }}">
+       
+      </div>
+      <form>
+        <div class="mb-3">
+          <label for="last_name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="{{last_name }}">
+         
+        </div>
+          <label for="dept" class="form-label">Department</label>
+          <input type="number" class="form-control" id="dept" name="dept" value="{{ dept }}">
+         
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <input type="number" class="form-control" id="role" name="role" value="{{ role }}">
+         
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="number" class="form-control" id="phone" name="phone" value="{{ phone }}">
+       
+      </div>
+   
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{location }}">
+      </div>
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="Salary" name="salary" value="{{ salery}}">
+      </div>
+      <div class="mb-3">
+        <label for="bonus" class="form-label">Bonus</label>
+        <input type="number" class="form-control" id="bonus"name="bonus" value="{{ bonus }}">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
